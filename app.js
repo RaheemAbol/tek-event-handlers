@@ -26,3 +26,32 @@ btn.addEventListener("click", function (evt) {
   inp.value = "";
   //   console.log(evt);
 });
+
+document.querySelector("ul").addEventListener("click", handleClick);
+
+document.querySelector("ul").removeEventListener("click", handleClick);
+
+function handleClick(evt) {
+  if (evt.target.tagName == "LI") {
+    // do something special
+    // evt.target.style.color = "red";
+    evt.target.remove();
+  }
+
+  //   console.log(evt);
+}
+
+const parent = document.querySelector("p");
+const child = document.querySelector("strong");
+
+parent.addEventListener(
+  "click",
+  function () {
+    console.log("parent");
+  },
+  true
+);
+
+child.addEventListener("click", function () {
+  console.log("child");
+});
